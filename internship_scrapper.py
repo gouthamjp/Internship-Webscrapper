@@ -10,7 +10,7 @@ def find_intern():
     html_text = requests.get(url).text
     soup = BeautifulSoup(html_text, 'lxml')
     internships = soup.find_all('div', class_ = "internship_meta")
-
+    
     for index,inter in enumerate(internships):
         comapny_name = inter.find('a', class_ = "link_display_like_text").text.strip()
         location = inter.find('div', id = "location_names").text.strip()
